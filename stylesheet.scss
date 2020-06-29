@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  section {
+    position: relative;
+    top: 10rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    #selected-city {
+      background: rgba(0,0,0,0.2);
+      margin: 0 0 0 1rem;
+    }
+    #submit {
+      background: rgba(175,238,238,0.4);
+      margin: 0 1rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.2);
+      width: 18%;
+    }
+  }
+}
+

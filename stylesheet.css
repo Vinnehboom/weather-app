@@ -16,12 +16,19 @@ body {
     background: rgba(255, 255, 255, 0.2); }
     body section #selected-city {
       background: rgba(0, 0, 0, 0.2);
-      margin: 0 0 0 1rem; }
-    body section #submit {
+      margin: 0 1rem 0 1rem; }
+    body section #amount-of-days {
+      background: rgba(0, 0, 0, 0.2);
+      margin: 0 0 0 0.5rem;
+      width: 3rem; }
+    body section #submit-city {
       background: rgba(175, 238, 238, 0.4);
       margin: 0 1rem; }
     body section .card {
       background: rgba(255, 255, 255, 0.2);
-      width: 18%; }
+      width: 19%; }
+      body section .card .card-body {
+        min-height: 100%;
+        min-width: 100%; }
 
 /*# sourceMappingURL=stylesheet.css.map */

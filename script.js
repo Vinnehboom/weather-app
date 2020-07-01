@@ -17,8 +17,7 @@ const weatherFetch = () => {
             `<div class="card mt-2 col-md- col-lg-2">
                 <div class="card-body justify-content-center">
                     <div class="card-title">Forecast</div>
-
-                     <div  id="${iconTarget}"></div>
+                    <img class="card-img" id="${iconTarget}" src="" alt="icon">
                     <div class="card-text" id="${dateTarget}"  style="text-decoration: underline;"></div>
                     
                  
@@ -115,10 +114,8 @@ const weatherFetch = () => {
             let icon = getOccurrence(array);
             let iconTarget = 'icon-target-' + index;
             let iconURL = 'http://openweathermap.org/img/wn/' + icon +'@2x.png'
-            imgElement = `<img style="object-fit: cover;" src="${iconURL}" alt="icon">`
-            console.log(imgElement);
 
-            document.getElementById(iconTarget).innerHTML = imgElement;
+            document.getElementById(iconTarget).setAttribute('src', iconURL);
         })
 
 

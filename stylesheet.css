@@ -24,38 +24,62 @@ body {
     font-size: 120%;
     width: 92%; }
     body section #selected-city {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.6);
       margin: 0 1rem 0 1rem;
       padding-top: 0.2rem;
       min-height: 30%;
       border-radius: 5px; }
     body section #amount-of-days {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.6);
       margin: 0 0 0 0.5rem;
       width: 3rem;
       border-radius: 5px; }
     body section #submit-city {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.6);
       border-radius: 5px;
       padding: 0.3rem;
       margin: 0 1rem; }
     body section .card {
       text-align: center;
       background: rgba(211, 211, 211, 0.5);
-      font-size: 1rem; }
+      font-size: 0.9rem; }
       body section .card .card-body {
         min-height: 100%;
         min-width: 100%; }
       body section .card .card-title {
         font-weight: bolder; }
-      body section .card [id|=date-target-] {
-        text-decoration: underline; }
-      body section .card [id|=temp-target-] {
-        font-weight: bold; }
     body section .container {
       max-height: 50%; }
 
 .select-id {
   margin: 0 0.2rem; }
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .card-img {
+    min-width: 75%;
+    height: 75%; } }
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 991px) and (max-width: 1199px) {
+  .card-img {
+    min-width: 75%;
+    height: 75%; } }
+@media (min-width: 768px) and (max-width: 990px) {
+  .card-img {
+    width: 25%;
+    height: auto; } }
+/* Landscape phone to portrait tablet */
+.card-img {
+  width: 25%;
+  height: auto; }
+
+/* Landscape phones and down */
+@media (max-width: 400px) {
+  .card-img {
+    min-width: 50%;
+    height: 50%; }
+
+  .card-body {
+    overflow-y: hidden; } }
 
 /*# sourceMappingURL=stylesheet.css.map */

@@ -12,11 +12,14 @@ const weatherFetch = () => {
     for (let i = 0; i < totalDays; i++) {
         let iconTarget = 'icon-target-' +i;
         let tempTarget = 'temp-target-' +i;
+        let dateTarget = 'date-target-' +i;
         outputTarget.innerHTML +=
-            `<div class="card col-sm col-md col-lg-2">
+            `<div class="card mt-2 col-md- col-lg-2">
                 <div class="card-body justify-content-center">
-                     <div id="${iconTarget}"></div>
-                    <div class="card-title"></div>
+                    <div class="card-title">Forecast</div>
+
+                     <div  id="${iconTarget}"></div>
+                    <div class="card-text" id="${dateTarget}"  style="text-decoration: underline;"></div>
                     
                  
                     <div class="card-text">
@@ -77,6 +80,9 @@ const weatherFetch = () => {
         for (let i = 0; i < daysToCheckArray.length; i++) {
             let tempCollection = [];
             let iconCollection = [];
+            let dateTarget = '#date-target-' +i;
+            let x = new Date()
+            x.setDate(new Date().getDate() + i);
             for (let j = 0; j < dateArray.length; j++) {
                 if (daysToCheckArray[i] === dateArray[j]) {
                     let tempToAdd = tempArray[j];
@@ -85,8 +91,11 @@ const weatherFetch = () => {
                     iconCollection.push(iconToAdd)
                 }
             }
+            x = x.toLocaleDateString('NL-be');
+            console.log(x);
             dayArray.push(tempCollection);
             iconArray.push(iconCollection);
+            document.querySelector(dateTarget).innerHTML = x;
 
         }
         console.log(dayArray)
@@ -95,8 +104,10 @@ const weatherFetch = () => {
         dayArray.forEach((array, index)  =>
         {
             let arrayAverage = averageArray(array);
-            targetId = "#temp-target-" + index
-            document.querySelector(targetId).innerHTML = arrayAverage;
+            let targetId = "#temp-target-" + index;
+            document.querySelector(targetId).innerHTML ="Daily average: " +  arrayAverage;
+
+
         })
 
         iconArray.forEach((array, index) =>
@@ -104,7 +115,7 @@ const weatherFetch = () => {
             let icon = getOccurrence(array);
             let iconTarget = 'icon-target-' + index;
             let iconURL = 'http://openweathermap.org/img/wn/' + icon +'@2x.png'
-            imgElement = `<img class="mx-auto" src="${iconURL}" alt="icon">`
+            imgElement = `<img style="object-fit: cover;" src="${iconURL}" alt="icon">`
             console.log(imgElement);
 
             document.getElementById(iconTarget).innerHTML = imgElement;

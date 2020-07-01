@@ -11,7 +11,7 @@ body {
   background-repeat: no-repeat;
   section {
     position: relative;
-    top: 10rem;
+    top: 6rem;
     padding: 2.5rem;
     border-radius: 20px;
     background: rgba(255,255,255,0.2);
@@ -37,5 +37,8 @@ body {
       }
     }
   }
+}
+.select-id {
+  margin: 0 0.2rem;
 }
 

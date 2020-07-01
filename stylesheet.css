@@ -10,7 +10,7 @@ body {
   background-repeat: no-repeat; }
   body section {
     position: relative;
-    top: 10rem;
+    top: 6rem;
     padding: 2.5rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.2); }
@@ -30,5 +30,8 @@ body {
       body section .card .card-body {
         min-height: 100%;
         min-width: 100%; }
+
+.select-id {
+  margin: 0 0.2rem; }
 
 /*# sourceMappingURL=stylesheet.css.map */

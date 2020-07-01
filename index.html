@@ -11,13 +11,13 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
 </head>
-<body>
+<body id="body">
 <section class="w-75 h-75 m-auto justify-content-center" id="output-box">
-    <h2 class="text-center">It's always sunny in...</h2>
+    <h2 class="text-center">It's always sunny in ... <span id="city-target"></span></h2>
     <form class="d-flex justify-content-center" id="my-form" action="">
         <label for="selected-city"></label>
         <input type="text" id="selected-city" name="city">
-        <label for="amount-of-days">over the next ... days:</label>
+        <label class="select-id" for="amount-of-days">over the next </label>
         <select name="cars" id="amount-of-days">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -25,6 +25,7 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
+        <label  class="select-id" for="amount-of-days"> days</label>
         <button id="submit-city">Submit</button>
     </form>
     <div class="target container w-100">

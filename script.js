@@ -4,6 +4,8 @@ const weatherFetch = () => {
     let APICall = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${APIKey}`
     let outputTarget = document.querySelector('#card-target')
     let totalDays = document.querySelector('#amount-of-days').value;
+    outputTarget.innerHTML = '';
+    document.querySelector('#city-target').innerHTML = cityName;
 
     // card output
 
@@ -11,8 +13,8 @@ const weatherFetch = () => {
         let iconTarget = 'icon-target-' +i;
         let tempTarget = 'temp-target-' +i;
         outputTarget.innerHTML +=
-            `<div class="card">
-                <div class="card-body col-sm col-md-2">
+            `<div class="card col-sm col-md col-lg-2">
+                <div class="card-body justify-content-center">
                      <div id="${iconTarget}"></div>
                     <div class="card-title"></div>
                     
@@ -25,6 +27,8 @@ const weatherFetch = () => {
             </div>`
 
     }
+    //image fetch
+    fetchImage(cityName);
     // main fetch
     fetch(APICall).then(res => res.json()).then(data => {
         let generalArray = data.list;
@@ -100,7 +104,7 @@ const weatherFetch = () => {
             let icon = getOccurrence(array);
             let iconTarget = 'icon-target-' + index;
             let iconURL = 'http://openweathermap.org/img/wn/' + icon +'@2x.png'
-            imgElement = `<img src="${iconURL}" alt="icon">`
+            imgElement = `<img class="mx-auto" src="${iconURL}" alt="icon">`
             console.log(imgElement);
 
             document.getElementById(iconTarget).innerHTML = imgElement;
@@ -139,6 +143,20 @@ function getOccurrence(array) {
     });
 
     return chosenIcon
+
+}
+
+const fetchImage = (cityName) =>
+{
+    let url = `https://api.unsplash.com/photos/random?query=${cityName},city&client_id=v-x7eI3uKQtcDVx1c0laRrKEIaFHquVwPM9uJzKcMM8`
+    fetch(url).then((response) => response.json()).then((data) => {
+        console.log(data);
+        let linkArray = data.urls;
+        console.log(linkArray);
+        let imgURL = linkArray.regular;
+
+        document.body.style.backgroundImage = `url('${imgURL}')`
+    })
 
 }
 
